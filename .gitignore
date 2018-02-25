@@ -290,3 +290,7 @@ __pycache__/
 #Cofig
 CapaDatos/app.config
 CapaDatos/Properties/Settings.Designer.cs
+CapaDatos/Properties/Settings.settings
+CapaPresentacion/app.config
+CapaPresentacion/Properties/Settings.Designer.cs
+CapaPresentacion/Properties/Settings.settings
