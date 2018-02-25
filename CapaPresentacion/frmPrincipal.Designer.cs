@@ -570,7 +570,7 @@
             // 
             // button1
             // 
-            this.button1.BackgroundImage = global::CapaPresentacion.Properties.Resources.archive;
+            this.button1.BackgroundImage = global::CapaPresentacion.Properties.Resources.ss;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Font = new System.Drawing.Font("Dutch801 Rm BT", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(17, 23);
