@@ -87,6 +87,7 @@
             this.ttMensaje = new System.Windows.Forms.ToolTip(this.components);
             this.errorIcono = new System.Windows.Forms.ErrorProvider(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.lblValorEnCaja = new System.Windows.Forms.Label();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListas_Detalle)).BeginInit();
@@ -130,7 +131,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1070, 455);
+            this.tabPage2.Size = new System.Drawing.Size(1070, 493);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Mantenimiento";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -194,6 +195,7 @@
             this.dataListas_Detalle.RowTemplate.Height = 24;
             this.dataListas_Detalle.Size = new System.Drawing.Size(886, 109);
             this.dataListas_Detalle.TabIndex = 32;
+            this.dataListas_Detalle.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataListas_Detalle_CellContentClick);
             // 
             // groupBox2
             // 
@@ -524,11 +526,12 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 67);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1078, 484);
+            this.tabControl1.Size = new System.Drawing.Size(1078, 522);
             this.tabControl1.TabIndex = 12;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.lblValorEnCaja);
             this.tabPage1.Controls.Add(this.btnComprobante);
             this.tabPage1.Controls.Add(this.label9);
             this.tabPage1.Controls.Add(this.dtFecha2);
@@ -543,7 +546,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1070, 455);
+            this.tabPage1.Size = new System.Drawing.Size(1070, 493);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -698,12 +701,22 @@
             this.label1.Text = "Ventas";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // lblValorEnCaja
+            // 
+            this.lblValorEnCaja.AutoSize = true;
+            this.lblValorEnCaja.Location = new System.Drawing.Point(609, 466);
+            this.lblValorEnCaja.Name = "lblValorEnCaja";
+            this.lblValorEnCaja.Size = new System.Drawing.Size(28, 17);
+            this.lblValorEnCaja.TabIndex = 12;
+            this.lblValorEnCaja.Text = "0.0";
+            this.lblValorEnCaja.Click += new System.EventHandler(this.lblValorEnCaja_Click);
+            // 
             // frmVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1098, 561);
+            this.ClientSize = new System.Drawing.Size(1098, 601);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label1);
             this.Name = "frmVenta";
@@ -786,5 +799,6 @@
         private System.Windows.Forms.TextBox txtDescuento;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtStock_Actual;
+        private System.Windows.Forms.Label lblValorEnCaja;
     }
 }

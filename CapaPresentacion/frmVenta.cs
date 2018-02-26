@@ -17,8 +17,8 @@ namespace CapaPresentacion
         private bool IsNuevo=false;
         public int Idtrabajador;
         private DataTable dtDetalle;
-
         private decimal totalPagado = 0;
+        private decimal ValorEnCaja = 0;
 
         private static frmVenta _instancia;
         public static frmVenta GetInstancia()
@@ -258,17 +258,7 @@ namespace CapaPresentacion
             }
         }
 
-        private void dataListado_DoubleClick(object sender, EventArgs e)
-        {
-            this.txtIdventa.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["idventa"].Value);
-            this.txtCliente.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["cliente"].Value);
-            this.dtFecha.Value = Convert.ToDateTime(this.dataListado.CurrentRow.Cells["fecha"].Value);
-            this.cbTipo_Comprobante.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["tipo_comprobante"].Value);
-            this.txtCorrelativo.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["correlativo"].Value);
-            this.lblTotal_Pagado.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["total"].Value);
-            this.MostrarDetalle();
-            this.tabControl1.SelectedIndex = 1;
-        }
+
 
         private void chkEliminar_CheckedChanged(object sender, EventArgs e)
         {
@@ -391,6 +381,8 @@ namespace CapaPresentacion
                         decimal subTotal = Convert.ToDecimal(this.txtCantidad.Text) * Convert.ToDecimal(this.txtPrecioVenta.Text)-Convert.ToDecimal(this.txtDescuento.Text);
                         totalPagado = totalPagado + subTotal;
                         this.lblTotal_Pagado.Text = totalPagado.ToString("#0.00#");
+                       // ValorEnCaja = ValorEnCaja + totalPagado;
+                      //  this.lblValorEnCaja.Text = ValorEnCaja.ToString("#0.00#");
                         //Agregar ese detalle al datalistadoDetalle
                         DataRow row = this.dtDetalle.NewRow();
                         row["iddetalle_ingreso"] = Convert.ToInt32(this.txtIdarticulo.Text);
@@ -414,6 +406,17 @@ namespace CapaPresentacion
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
+        private void dataListado_DoubleClick(object sender, EventArgs e)
+        {
+            this.txtIdventa.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["idventa"].Value);
+            this.txtCliente.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["cliente"].Value);
+            this.dtFecha.Value = Convert.ToDateTime(this.dataListado.CurrentRow.Cells["fecha"].Value);
+            this.cbTipo_Comprobante.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["tipo_comprobante"].Value);
+            this.txtCorrelativo.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["correlativo"].Value);
+            this.lblTotal_Pagado.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["total"].Value);
+            this.MostrarDetalle();
+            this.tabControl1.SelectedIndex = 1;
+        }
 
         private void btnQuitar_Click(object sender, EventArgs e)
         {
@@ -422,8 +425,10 @@ namespace CapaPresentacion
                 int indiceFila = this.dataListas_Detalle.CurrentCell.RowIndex;
                 DataRow row = this.dtDetalle.Rows[indiceFila];
                 //disminuir el total pagado
-                this.totalPagado = this.totalPagado = Convert.ToDecimal(row["subtotal"].ToString());
+                this.totalPagado = this.totalPagado - Convert.ToDecimal(row["subtotal"].ToString());
                 this.lblTotal_Pagado.Text = totalPagado.ToString("#0.00");
+               // ValorEnCaja = ValorEnCaja - totalPagado;
+              //  this.lblValorEnCaja.Text = ValorEnCaja.ToString("#0.00#");
                 //Removemos la fila
                 this.dtDetalle.Rows.Remove(row);
             }
@@ -438,6 +443,16 @@ namespace CapaPresentacion
             frmReporteFactura frm = new frmReporteFactura();
             frm.Idventa = Convert.ToInt32(this.dataListado.CurrentRow.Cells["idventa"].Value);
             frm.ShowDialog();
+        }
+
+        private void lblValorEnCaja_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataListas_Detalle_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

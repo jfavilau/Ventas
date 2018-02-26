@@ -193,6 +193,7 @@
             this.dataListas_Detalle.RowTemplate.Height = 24;
             this.dataListas_Detalle.Size = new System.Drawing.Size(886, 109);
             this.dataListas_Detalle.TabIndex = 32;
+            this.dataListas_Detalle.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataListas_Detalle_CellContentClick);
             // 
             // groupBox2
             // 

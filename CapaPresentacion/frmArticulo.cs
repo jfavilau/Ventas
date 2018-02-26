@@ -36,10 +36,10 @@ namespace CapaPresentacion
         public frmArticulo()
         {
             InitializeComponent();
-            this.ttMensaje.SetToolTip(this.txtNombre, "Ingrese el Nombre del Arcticulo");
-            this.ttMensaje.SetToolTip(this.pxImagen, "Selecciona la Imagen del Articulo");
-            this.ttMensaje.SetToolTip(this.txtCategoria, "Seleccione la Categoria del Articulo");
-            this.ttMensaje.SetToolTip(this.cbIdpresentacion, "Seleccione la Presentacion del Articulo");
+            this.ttMensaje.SetToolTip(this.txtNombre, "Ingrese el Nombre del Artículo");
+            this.ttMensaje.SetToolTip(this.pxImagen, "Selecciona la Imagen del Artículo");
+            this.ttMensaje.SetToolTip(this.txtCategoria, "Seleccione la Categoria del Artículo");
+            this.ttMensaje.SetToolTip(this.cbIdpresentacion, "Seleccione la Presentacion del Artículo");
             this.txtIdcategoria.Visible = false;
             this.txtIdcategoria.ReadOnly = true;
             this.LlenarComboPresentacion();
@@ -219,7 +219,7 @@ namespace CapaPresentacion
                     {
                         if (this.IsNuevo)
                         {
-                            this.MensajeOK("Se Inserto de forma correcta el registro");
+                            this.MensajeOK("Se Insertó de forma correcta el registro");
                         }
                         else
                         {

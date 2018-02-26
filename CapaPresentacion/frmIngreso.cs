@@ -424,5 +424,10 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void dataListas_Detalle_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
