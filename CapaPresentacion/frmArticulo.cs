@@ -358,5 +358,10 @@ namespace CapaPresentacion
             frmReporteArticulo frm = new frmReporteArticulo();
             frm.ShowDialog();
         }
+
+        private void frmArticulo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _Instancia = null;
+        }
     }
 }

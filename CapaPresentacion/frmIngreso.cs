@@ -20,14 +20,14 @@ namespace CapaPresentacion
         private decimal totalPagado = 0;
 
 
-        private static frmIngreso _Instacia;
+        private static frmIngreso _Instancia;
         public static frmIngreso GetInstancia()
         {
-            if(_Instacia==null)
+            if(_Instancia==null)
             {
-                _Instacia = new frmIngreso();
+                _Instancia = new frmIngreso();
             }
-            return _Instacia;
+            return _Instancia;
         }
 
         public void setProveedor(string idproveedor,string nombre)
@@ -187,7 +187,7 @@ namespace CapaPresentacion
 
         private void frmIngreso_FormClosing(object sender, FormClosingEventArgs e)
         {
-            _Instacia = null;
+            _Instancia = null;
         }
 
         private void btnBuscarProveedor_Click(object sender, EventArgs e)
@@ -395,7 +395,7 @@ namespace CapaPresentacion
                 int indiceFila = this.dataListas_Detalle.CurrentCell.RowIndex;
                 DataRow row = this.dtDetalle.Rows[indiceFila];
                 //disminuir el total pagado
-                this.totalPagado = this.totalPagado = Convert.ToDecimal(row["subtotal"].ToString());
+                this.totalPagado = this.totalPagado - Convert.ToDecimal(row["subtotal"].ToString());
                 this.lblTotal_Pagado.Text = totalPagado.ToString("#0.00");
                 //Removemos la fila
                 this.dtDetalle.Rows.Remove(row);
@@ -408,6 +408,12 @@ namespace CapaPresentacion
 
         private void dataListado_DoubleClick(object sender, EventArgs e)
         {
+            this.IsNuevo = true;
+            this.Botones();
+            this.Limpiar();
+            this.Habilitar(true);
+            this.txtCorrelativo.Focus();
+            this.limpiarDetalle();
             this.txtIdingreso.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["idingreso"].Value);
             this.txtProveedor.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["proveedor"].Value);
             this.dtFecha.Value = Convert.ToDateTime(this.dataListado.CurrentRow.Cells["fecha"].Value);

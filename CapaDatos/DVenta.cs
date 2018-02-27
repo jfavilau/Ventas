@@ -354,7 +354,7 @@ namespace CapaDatos
                 SqlCon.ConnectionString = conexion.Cn;
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "spbuscar_detalle_venta";
+                SqlCmd.CommandText = "spmostrar_detalle_venta";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter ParTextoBuscar = new SqlParameter();

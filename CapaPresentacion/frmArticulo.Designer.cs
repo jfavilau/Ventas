@@ -500,7 +500,8 @@
             this.Controls.Add(this.label1);
             this.Name = "frmArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmArticulo";
+            this.Text = "Registro de Artículos";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmArticulo_FormClosing);
             this.Load += new System.EventHandler(this.frmArticulo_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
