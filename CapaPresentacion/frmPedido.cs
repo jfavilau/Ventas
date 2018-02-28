@@ -17,10 +17,17 @@ namespace CapaPresentacion
 
         private bool IsNuevo = false;
         private bool IsEditar = false;
+
+       
+
+        
+        
         public frmPedido()
         {
             InitializeComponent();
             this.ttMensaje.SetToolTip(this.txtNombre, "Ingrese el Nombre del articulo a pedir");
+            this.btnImprimir.Visible = false;
+            
         }
 
 
@@ -286,6 +293,21 @@ namespace CapaPresentacion
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnBuscarProveedor_Click(object sender, EventArgs e)
+        {
+       
+        }
+
+        private void txtIdproveedor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmPedido_FormClosing(object sender, FormClosingEventArgs e)
+        {
+          
         }
     }
 }

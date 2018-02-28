@@ -52,6 +52,10 @@ namespace CapaNegocio
         {
             return new DVenta().Mostrar();
         }
+        public static DataTable Mostrar_ventas()
+        {
+            return new DVenta().Mostrar_ventas();
+        }
         //Metodo BuscarNombre que llama al metodo BuscarNombre de la Clase DVenta
         // de la CapaDatos
         public static DataTable BuscarFechas(string textobuscar, string textobuscar2)

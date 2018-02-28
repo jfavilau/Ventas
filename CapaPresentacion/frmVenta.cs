@@ -15,11 +15,13 @@ namespace CapaPresentacion
     public partial class frmVenta : Form
     {
         private bool IsNuevo=false;
+        
         public int Idtrabajador;
         private DataTable dtDetalle;
         private decimal totalPagado = 0;
         private decimal ValorEnCaja = 0;
-
+        private int Registro = 0;
+       
         private static frmVenta _instancia;
         public static frmVenta GetInstancia()
         {
@@ -58,8 +60,10 @@ namespace CapaPresentacion
             this.ttMensaje.SetToolTip(this.txtCantidad, "Ingrese la Cantidad del Articulo");
             this.ttMensaje.SetToolTip(this.txtArticulo, "Seleccione un Articulo");
             this.txtIdcliente.Visible = false;
+            this.btnImprimir.Visible = false;
             this.txtIdarticulo.Visible = false;
             this.txtPrecioCompra.Visible = false;
+            
             this.label12.Visible = false;
             this.txtCliente.ReadOnly = true;
             this.txtArticulo.ReadOnly = true;
@@ -155,9 +159,29 @@ namespace CapaPresentacion
         //Metodo Mostrar
         private void Mostrar()
         {
+       
             this.dataListado.DataSource = NVenta.Mostrar();
             this.OcultarColumnas();
             lblTotal.Text = "Total de Registros:" + Convert.ToString(dataListado.Rows.Count);
+            Registro = (dataListado.Rows.Count);
+                   
+        }
+        private void Ventas()
+        {
+            if (Registro == 0)
+            {
+                this.lblValorEnCaja.Text = "0,00";
+                
+                
+            }
+            else
+            {
+                this.dataListado1.DataSource = NVenta.Mostrar_ventas();
+                ValorEnCaja = Convert.ToDecimal(this.dataListado1.CurrentRow.Cells["Total_Ventas"].Value);
+                this.lblValorEnCaja.Text = ValorEnCaja.ToString("C");
+                
+            }
+            this.dataListado1.Visible = false;
         }
         //Metodo BuscarFechas
         private void BuscarFechas()
@@ -194,11 +218,13 @@ namespace CapaPresentacion
         private void frmVenta_Load(object sender, EventArgs e)
         {
             this.Top = 0;
-            
+           
             this.Mostrar();
             this.Habilitar(false);
             this.Botones();
             this.crearTabla();
+            this.Ventas();
+           
 
 
         }
@@ -253,6 +279,7 @@ namespace CapaPresentacion
                         }
                     }
                     this.Mostrar();
+                    this.Ventas();
 
                 }
             }
@@ -311,6 +338,7 @@ namespace CapaPresentacion
             try
             {
                 string rpta = "";
+               
                 if (this.txtIdcliente.Text == string.Empty
                     || this.txtCorrelativo.Text == string.Empty || this.txtIgv.Text == string.Empty)
                 {
@@ -324,9 +352,11 @@ namespace CapaPresentacion
 
                     if (this.IsNuevo)
                     {
+                       
                         rpta = NVenta.Insertar(Convert.ToInt32(this.txtIdcliente.Text),Idtrabajador,
                             dtFecha.Value, cbTipo_Comprobante.Text, txtCorrelativo.Text,
                             Convert.ToDecimal(txtIgv.Text), dtDetalle);
+                        
                     }
 
                     if (rpta.Equals("OK"))
@@ -345,6 +375,7 @@ namespace CapaPresentacion
                     this.Limpiar();
                     this.limpiarDetalle();
                     this.Mostrar();
+                    this.Ventas();
 
 
                 }
@@ -385,8 +416,7 @@ namespace CapaPresentacion
                         decimal subTotal = Convert.ToDecimal(this.txtCantidad.Text) * Convert.ToDecimal(this.txtPrecioVenta.Text)-Convert.ToDecimal(this.txtDescuento.Text);
                         totalPagado = totalPagado + subTotal;
                         this.lblTotal_Pagado.Text = totalPagado.ToString("#0.00#");
-                       // ValorEnCaja = ValorEnCaja + totalPagado;
-                      //  this.lblValorEnCaja.Text = ValorEnCaja.ToString("#0.00#");
+                    
                         //Agregar ese detalle al datalistadoDetalle
                         DataRow row = this.dtDetalle.NewRow();
                         row["iddetalle_ingreso"] = Convert.ToInt32(this.txtIdarticulo.Text);
@@ -431,8 +461,7 @@ namespace CapaPresentacion
                 //disminuir el total pagado
                 this.totalPagado = this.totalPagado - Convert.ToDecimal(row["subtotal"].ToString());
                 this.lblTotal_Pagado.Text = totalPagado.ToString("#0.00");
-               // ValorEnCaja = ValorEnCaja - totalPagado;
-              //  this.lblValorEnCaja.Text = ValorEnCaja.ToString("#0.00#");
+               
                 //Removemos la fila
                 this.dtDetalle.Rows.Remove(row);
             }
@@ -462,6 +491,14 @@ namespace CapaPresentacion
         private void txtCliente_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnventas_Click(object sender, EventArgs e)
+        {
+            
+            
+            
+        
         }
     }
 }

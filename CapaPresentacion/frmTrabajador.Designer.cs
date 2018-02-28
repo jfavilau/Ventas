@@ -521,7 +521,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmTrabajador";
-            this.Text = "Mantenimiento de Trabajador";
+            this.Text = "Registro de Trabajador";
             this.Load += new System.EventHandler(this.frmTrabajador_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).EndInit();
             this.tabPage2.ResumeLayout(false);

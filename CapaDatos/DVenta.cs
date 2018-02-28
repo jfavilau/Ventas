@@ -308,6 +308,28 @@ namespace CapaDatos
             }
             return DtResultado;
         }
+        public DataTable Mostrar_ventas()
+        {
+            DataTable DtResultado = new DataTable("venta");
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon.ConnectionString = conexion.Cn;
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "spsuma_ventas";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+            }
+            catch (Exception ex)
+            {
+                DtResultado = null;
+
+            }
+            return DtResultado;
+        }
         //Metodo Buscarfechas
         public DataTable BuscarFechas(String TextoBuscar, String TextoBuscar2)
         {

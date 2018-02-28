@@ -697,7 +697,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "frmIngreso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Mantenimiento de Ingresos de Almacen";
+            this.Text = "Registros de Ingresos de Almacen";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmIngreso_FormClosing);
             this.Load += new System.EventHandler(this.frmIngreso_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).EndInit();

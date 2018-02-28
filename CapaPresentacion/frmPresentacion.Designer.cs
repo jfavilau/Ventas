@@ -359,7 +359,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "frmPresentacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Mantenimiento de Presentaciones";
+            this.Text = "Registro de Presentaciones";
             this.Load += new System.EventHandler(this.frmPresentacion_Load);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

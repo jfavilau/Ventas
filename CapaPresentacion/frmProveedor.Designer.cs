@@ -468,7 +468,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "frmProveedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Mantenimiento de Proveedores";
+            this.Text = "Registro de Proveedores";
             this.Load += new System.EventHandler(this.frmProveedor_Load);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
