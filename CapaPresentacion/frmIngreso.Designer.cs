@@ -338,9 +338,9 @@
             // btnBuscarArticulo
             // 
             this.btnBuscarArticulo.Image = global::CapaPresentacion.Properties.Resources.if_search_magnifying_glass_find_103857__1_;
-            this.btnBuscarArticulo.Location = new System.Drawing.Point(310, 10);
+            this.btnBuscarArticulo.Location = new System.Drawing.Point(298, 10);
             this.btnBuscarArticulo.Name = "btnBuscarArticulo";
-            this.btnBuscarArticulo.Size = new System.Drawing.Size(28, 28);
+            this.btnBuscarArticulo.Size = new System.Drawing.Size(40, 28);
             this.btnBuscarArticulo.TabIndex = 33;
             this.btnBuscarArticulo.UseVisualStyleBackColor = true;
             this.btnBuscarArticulo.Click += new System.EventHandler(this.btnBuscarArticulo_Click);
@@ -443,9 +443,9 @@
             // btnBuscarProveedor
             // 
             this.btnBuscarProveedor.Image = global::CapaPresentacion.Properties.Resources.if_search_magnifying_glass_find_103857__1_;
-            this.btnBuscarProveedor.Location = new System.Drawing.Point(603, 40);
+            this.btnBuscarProveedor.Location = new System.Drawing.Point(591, 40);
             this.btnBuscarProveedor.Name = "btnBuscarProveedor";
-            this.btnBuscarProveedor.Size = new System.Drawing.Size(28, 28);
+            this.btnBuscarProveedor.Size = new System.Drawing.Size(40, 28);
             this.btnBuscarProveedor.TabIndex = 20;
             this.btnBuscarProveedor.UseVisualStyleBackColor = true;
             this.btnBuscarProveedor.Click += new System.EventHandler(this.btnBuscarProveedor_Click);
@@ -573,6 +573,7 @@
             this.dtFecha2.Name = "dtFecha2";
             this.dtFecha2.Size = new System.Drawing.Size(114, 22);
             this.dtFecha2.TabIndex = 9;
+            this.dtFecha2.Value = new System.DateTime(2018, 2, 27, 0, 0, 0, 0);
             // 
             // dtFecha1
             // 
@@ -581,6 +582,7 @@
             this.dtFecha1.Name = "dtFecha1";
             this.dtFecha1.Size = new System.Drawing.Size(111, 22);
             this.dtFecha1.TabIndex = 8;
+            this.dtFecha1.Value = new System.DateTime(2018, 2, 27, 0, 0, 0, 0);
             // 
             // dataListado
             // 

@@ -138,6 +138,7 @@ namespace CapaPresentacion
         {
             this.dataListado.Columns[0].Visible = false;
             this.dataListado.Columns[1].Visible = false;
+            this.dataListado.Columns[2].Visible = false;
         }
         //Metodo Mostrar
         private void Mostrar()
@@ -149,8 +150,8 @@ namespace CapaPresentacion
         //Metodo BuscarFechas
         private void BuscarFechas()
         {
-            this.dataListado.DataSource = NIngreso.BuscarFechas(this.dtFecha1.Value.ToString("dd/MM/yyyy"),
-                this.dtFecha2.Value.ToString("dd/MM/yyyy"));
+            this.dataListado.DataSource = NIngreso.BuscarFechas(this.dtFecha1.Value.ToString("yyyy/MM/dd"),
+                this.dtFecha2.Value.ToString("yyyy/MM/dd"));
             this.OcultarColumnas();
             lblTotal.Text = "Total de Registros:" + Convert.ToString(dataListado.Rows.Count);
         }
@@ -304,7 +305,7 @@ namespace CapaPresentacion
                    
                     if (this.IsNuevo)
                     {
-                        Console.WriteLine(Idtrabajador);
+                        
                         rpta = NIngreso.Insertar(Idtrabajador,Convert.ToInt32(this.txtIdproveedor.Text),
                             dtFecha.Value,cbTipo_Comprobante.Text,txtCorrelativo.Text,
                             Convert.ToDecimal(txtIgv.Text),"EMITIDO",dtDetalle);
@@ -408,10 +409,7 @@ namespace CapaPresentacion
 
         private void dataListado_DoubleClick(object sender, EventArgs e)
         {
-            this.IsNuevo = true;
-            this.Botones();
-            this.Limpiar();
-            this.Habilitar(true);
+           
             this.txtCorrelativo.Focus();
             this.limpiarDetalle();
             this.txtIdingreso.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["idingreso"].Value);

@@ -59,6 +59,8 @@ namespace CapaPresentacion
             this.ttMensaje.SetToolTip(this.txtArticulo, "Seleccione un Articulo");
             this.txtIdcliente.Visible = false;
             this.txtIdarticulo.Visible = false;
+            this.txtPrecioCompra.Visible = false;
+            this.label12.Visible = false;
             this.txtCliente.ReadOnly = true;
             this.txtArticulo.ReadOnly = true;
             this.dtFecha_Vencimiento.Enabled = false;
@@ -101,6 +103,7 @@ namespace CapaPresentacion
             this.txtPrecioCompra.Text = string.Empty;
             this.txtPrecioVenta.Text = string.Empty;
             this.txtDescuento.Text = string.Empty;
+            this.txtDescuento.Text = "0";
         }
 
         //Habilitar los controles del formulario
@@ -147,6 +150,7 @@ namespace CapaPresentacion
         {
             this.dataListado.Columns[0].Visible = false;
             this.dataListado.Columns[1].Visible = false;
+            this.dataListado.Columns[2].Visible = false;
         }
         //Metodo Mostrar
         private void Mostrar()
@@ -158,8 +162,8 @@ namespace CapaPresentacion
         //Metodo BuscarFechas
         private void BuscarFechas()
         {
-            this.dataListado.DataSource = NVenta.BuscarFechas(this.dtFecha1.Value.ToString("dd/MM/yyyy"),
-                this.dtFecha2.Value.ToString("dd/MM/yyyy"));
+            this.dataListado.DataSource = NVenta.BuscarFechas(this.dtFecha1.Value.ToString("yyyy/MM/dd"),
+                this.dtFecha2.Value.ToString("yyyy/MM/dd"));
             this.OcultarColumnas();
             lblTotal.Text = "Total de Registros:" + Convert.ToString(dataListado.Rows.Count);
         }
@@ -451,6 +455,11 @@ namespace CapaPresentacion
         }
 
         private void dataListas_Detalle_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtCliente_TextChanged(object sender, EventArgs e)
         {
 
         }

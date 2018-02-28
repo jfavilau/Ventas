@@ -72,6 +72,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.lblValorEnCaja = new System.Windows.Forms.Label();
             this.btnComprobante = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.dtFecha2 = new System.Windows.Forms.DateTimePicker();
@@ -87,7 +88,6 @@
             this.ttMensaje = new System.Windows.Forms.ToolTip(this.components);
             this.errorIcono = new System.Windows.Forms.ErrorProvider(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.lblValorEnCaja = new System.Windows.Forms.Label();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListas_Detalle)).BeginInit();
@@ -165,7 +165,6 @@
             this.groupBox1.Size = new System.Drawing.Size(930, 388);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Ventas";
             // 
             // lblTotal_Pagado
             // 
@@ -351,9 +350,9 @@
             // btnBuscarArticulo
             // 
             this.btnBuscarArticulo.Image = global::CapaPresentacion.Properties.Resources.if_search_magnifying_glass_find_103857__1_;
-            this.btnBuscarArticulo.Location = new System.Drawing.Point(310, 10);
+            this.btnBuscarArticulo.Location = new System.Drawing.Point(298, 10);
             this.btnBuscarArticulo.Name = "btnBuscarArticulo";
-            this.btnBuscarArticulo.Size = new System.Drawing.Size(28, 28);
+            this.btnBuscarArticulo.Size = new System.Drawing.Size(40, 28);
             this.btnBuscarArticulo.TabIndex = 33;
             this.btnBuscarArticulo.UseVisualStyleBackColor = true;
             this.btnBuscarArticulo.Click += new System.EventHandler(this.btnBuscarArticulo_Click);
@@ -428,9 +427,9 @@
             // btnBuscarCliente
             // 
             this.btnBuscarCliente.Image = global::CapaPresentacion.Properties.Resources.if_search_magnifying_glass_find_103857__1_;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(603, 40);
+            this.btnBuscarCliente.Location = new System.Drawing.Point(591, 40);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Size = new System.Drawing.Size(28, 28);
+            this.btnBuscarCliente.Size = new System.Drawing.Size(40, 28);
             this.btnBuscarCliente.TabIndex = 20;
             this.btnBuscarCliente.UseVisualStyleBackColor = true;
             this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
@@ -443,6 +442,7 @@
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.Size = new System.Drawing.Size(207, 22);
             this.txtCliente.TabIndex = 17;
+            this.txtCliente.TextChanged += new System.EventHandler(this.txtCliente_TextChanged);
             // 
             // txtIdcliente
             // 
@@ -550,6 +550,16 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // lblValorEnCaja
+            // 
+            this.lblValorEnCaja.AutoSize = true;
+            this.lblValorEnCaja.Location = new System.Drawing.Point(609, 466);
+            this.lblValorEnCaja.Name = "lblValorEnCaja";
+            this.lblValorEnCaja.Size = new System.Drawing.Size(28, 17);
+            this.lblValorEnCaja.TabIndex = 12;
+            this.lblValorEnCaja.Text = "0.0";
+            this.lblValorEnCaja.Click += new System.EventHandler(this.lblValorEnCaja_Click);
             // 
             // btnComprobante
             // 
@@ -700,16 +710,6 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Ventas";
             this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // lblValorEnCaja
-            // 
-            this.lblValorEnCaja.AutoSize = true;
-            this.lblValorEnCaja.Location = new System.Drawing.Point(609, 466);
-            this.lblValorEnCaja.Name = "lblValorEnCaja";
-            this.lblValorEnCaja.Size = new System.Drawing.Size(28, 17);
-            this.lblValorEnCaja.TabIndex = 12;
-            this.lblValorEnCaja.Text = "0.0";
-            this.lblValorEnCaja.Click += new System.EventHandler(this.lblValorEnCaja_Click);
             // 
             // frmVenta
             // 

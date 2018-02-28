@@ -59,6 +59,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.errorIcono = new System.Windows.Forms.ErrorProvider(this.components);
             this.ttMensaje = new System.Windows.Forms.ToolTip(this.components);
+            this.btnBuscarProveedor = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtIdproveedor = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
@@ -68,6 +71,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnBuscarProveedor);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtIdproveedor);
             this.groupBox1.Controls.Add(this.txtIdpedido);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.btnCancelar);
@@ -380,6 +386,33 @@
             // 
             this.ttMensaje.IsBalloon = true;
             // 
+            // btnBuscarProveedor
+            // 
+            this.btnBuscarProveedor.Image = global::CapaPresentacion.Properties.Resources.if_search_magnifying_glass_find_103857__1_;
+            this.btnBuscarProveedor.Location = new System.Drawing.Point(375, 158);
+            this.btnBuscarProveedor.Name = "btnBuscarProveedor";
+            this.btnBuscarProveedor.Size = new System.Drawing.Size(40, 28);
+            this.btnBuscarProveedor.TabIndex = 26;
+            this.btnBuscarProveedor.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Location = new System.Drawing.Point(162, 185);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(207, 27);
+            this.textBox1.TabIndex = 25;
+            // 
+            // txtIdproveedor
+            // 
+            this.txtIdproveedor.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtIdproveedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIdproveedor.Location = new System.Drawing.Point(252, 151);
+            this.txtIdproveedor.Name = "txtIdproveedor";
+            this.txtIdproveedor.Size = new System.Drawing.Size(78, 27);
+            this.txtIdproveedor.TabIndex = 24;
+            // 
             // frmPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -437,5 +470,8 @@
         private System.Windows.Forms.ToolTip ttMensaje;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.CheckBox chkEliminar;
+        private System.Windows.Forms.Button btnBuscarProveedor;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtIdproveedor;
     }
 }

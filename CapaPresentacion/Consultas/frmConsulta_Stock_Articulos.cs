@@ -22,6 +22,7 @@ namespace CapaPresentacion.Consultas
         private void OcultarColumnas()
         {
             this.dataListado.Columns[0].Visible = false;
+            this.dataListado.Columns[5].Visible = false;
         }
         //Metodo Mostrar
         private void Mostrar()
@@ -36,6 +37,11 @@ namespace CapaPresentacion.Consultas
         }
 
         private void btnImprimir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataListado_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
